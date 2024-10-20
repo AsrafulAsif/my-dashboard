@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom"; // Import NavLink
+import { NavLink } from "react-router-dom";
 
-// Sidebar menu items
 const menuItems = [
   { icon: "dashboard.svg", label: "DashBoard", to: "/" },
   { icon: "profile.svg", label: "Profile", to: "/profile" },
@@ -36,7 +35,9 @@ const SideBar = () => {
             to={item.to}
             className={({ isActive }) =>
               `flex items-center ${
-                isCollapsed ? "justify-center rounded-full m-1" : "justify-start"
+                isCollapsed
+                  ? "justify-center rounded-full m-1"
+                  : "justify-start"
               } p-5 gap-2 h-14 ${
                 isActive ? "bg-red-400 text-gray-700" : "text-gray-700"
               }`
@@ -54,7 +55,7 @@ const SideBar = () => {
         ))}
       </div>
 
-      <div className="mt-auto min-h-10 mb-2 self-center">
+      <div className="mt-auto self-center mb-5">
         <img
           onClick={toggleSidebar}
           className="h-[20px] w-[20px] cursor-pointer"
